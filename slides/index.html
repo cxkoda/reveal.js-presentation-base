@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+   <title>reveal.js</title>
+   <meta name="author" content="David Huber">
+
+   <link rel="stylesheet" href="/css/reset.css">
+   <link rel="stylesheet" href="/css/reveal.css">
+   <link rel="stylesheet" href="/css/theme/simple.css">
+   <!-- <link rel="stylesheet" href="../../css/theme/solarized.css">  -->
+   <!-- <link rel="stylesheet" href="css/grid.css">
+   <link rel="stylesheet" href="css/mystyles.css"> -->
+
+   <!-- Theme used for syntax highlighting of code -->
+   <link rel="stylesheet" href="/lib/css/monokai.css">
+   <link rel="stylesheet" href="/external/fontawesome-free-5.11.2-web/css/all.css">
+
+   <!-- Printing and PDF exports -->
+   <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? '/css/print/pdf.css' : '/css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+   </script>
+</head>
+
+<body>
+   <div class="reveal">
+      <div class="slides">
+         <section>Slide 1</section>
+         <section>Slide 2</section>
+      </div>
+   </div>
+
+   <script src="/js/reveal.js">
+   </script>
+   <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+         width: 1920,
+         height: 1080,
+
+         // Display presentation control arrows
+         controls: false,
+
+         // Help the user learn the controls by providing hints, for example by
+         // bouncing the down arrow when they first encounter a vertical slide
+         controlsTutorial: false,
+
+         // Determines where controls appear, "edges" or "bottom-right"
+         controlsLayout: 'bottom-right',
+
+         // Visibility rule for backwards navigation arrows; "faded", "hidden"
+         // or "visible"
+         controlsBackArrows: 'faded',
+
+         // Display a presentation progress bar
+         progress: true,
+
+         // Display the page number of the current slide
+         slideNumber: true,
+
+         // Add the current slide number to the URL hash so that reloading the
+         // page/copying the URL will return you to the same slide
+         hash: true,
+
+         // Push each slide change to the browser history. Implies `hash: true`
+         history: false,
+
+         // Enable the slide overview mode
+         overview: true,
+
+         // Vertical centering of slides
+         center: true,
+
+         // Transition style
+         transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+         // Transition speed
+         transitionSpeed: 'default', // default/fast/slow
+
+         // Transition style for full page slide backgrounds
+         backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+
+
+         math: {
+            mathjax: '/external/MathJax/MathJax.js',
+            // mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+            config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+            // pass other options into `MathJax.Hub.Config()`
+            // TeX: { Macros: macros }
+         },
+
+         dependencies: [{
+            src: '/plugin/markdown/marked.js'
+         }, {
+            src: '/plugin/markdown/markdown.js'
+         }, {
+            src: '/plugin/notes/notes.js',
+            async: true
+         }, {
+            src: '/plugin/zoom-js/zoom.js',
+            async: true
+         },
+         {
+            src: '/plugin/math/math.js',
+            async: true
+         }, {
+            src: '/external/reveal.js-plugins/mathsvg/math.js',
+            async: true
+         }, {
+            // maybe you put this in `plugins`
+            src: '/external/reveal-svg-fragment2/reveal-svg-fragment.js',
+            condition: function () {
+               return !!document.querySelector('[data-svg-fragment]');
+            }
+         }
+         ]
+      });
+
+      Reveal.configure({
+         keyboard: {
+            // // up
+            // 38: null,
+            // // down
+            // 40: null,
+
+            // // left
+            // 37: 'prev',
+            // // right
+            // 39: 'next',
+
+            // page down
+            // 34: 'next',
+            34: 'right',
+            //page up
+            // 33: 'prev'
+            33: 'left'
+         }
+      });
+   </script>
+</body>
+
+</html>
